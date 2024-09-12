@@ -1,2 +1,2 @@
-# Sistemas-de-Gesti-n-Empresarial
+# Sistemas-de-Gestion-Empresarial
 This is not a project repository, made only for class exercises
