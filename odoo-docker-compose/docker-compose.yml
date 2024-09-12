@@ -1,7 +1,7 @@
 services:
 
   odoo:
-    image: odoo:17.0
+    image: odoo:latest
     container_name: odoo
     restart: unless-stopped
     links:
@@ -16,7 +16,7 @@ services:
       - ./addons:/mnt/extra-addons
 
   db:
-    image: postgres:16.0
+    image: postgres:latest
     container_name: db
     restart: unless-stopped       
     environment:
