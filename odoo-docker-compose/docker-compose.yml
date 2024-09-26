@@ -2,8 +2,8 @@ services:
 
   odoo:
     image: odoo:latest
-    container_name: odoo
-    restart: unless-stopped
+    container_name: web
+    restart: always
     links:
       - db:db    
     depends_on:
@@ -17,12 +17,13 @@ services:
     environment:
       - ODOO_DEMO=True
       - ODOO_TEST_MODULES=True
-      - ODOO_MASTER_PASSWORD=odoo
+      - ODOO_MASTER_PASS=odoo
+      - RESET_ADMIN_PASSWORDS_ON_STARTUP=yes
 
   db:
     image: postgres:latest
     container_name: db
-    restart: unless-stopped       
+    restart: always     
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
